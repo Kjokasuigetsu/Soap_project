@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2c7f8ceb-b67e-4a44-980a-10280b8a3eaa" activeEnvironment="Default" name="NewService?wsdl" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="516eb841-07ea-43e9-a74d-901abce92875" wsaVersion="NONE" name="NewServiceSoapBinding" type="wsdl" bindingName="{http://127.0.0.1}NewServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService?wsdl"><con:part><con:url>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService?wsdl</con:url><con:content><![CDATA[<definitions name="NewService" targetNamespace="http://127.0.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://127.0.0.1" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://127.0.0.1">
+  <types>
+    <xs:schema targetNamespace="http://127.0.0.1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xs1="http://127.0.0.1">
+      <xs:element name="BaseService">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Division" type="xs:float"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BaseServiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:float"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SecondBaseService">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SecondBaseServiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:float"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NearestNumberBezOFD">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="чСлучайное" type="xs:float"/>
+            <xs:element name="Ответ" type="xs:float"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NearestNumberBezOFDResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="BaseServiceRequestMessage">
+    <part name="parameters" element="tns:BaseService"/>
+  </message>
+  <message name="BaseServiceResponseMessage">
+    <part name="parameters" element="tns:BaseServiceResponse"/>
+  </message>
+  <message name="SecondBaseServiceRequestMessage">
+    <part name="parameters" element="tns:SecondBaseService"/>
+  </message>
+  <message name="SecondBaseServiceResponseMessage">
+    <part name="parameters" element="tns:SecondBaseServiceResponse"/>
+  </message>
+  <message name="NearestNumberBezOFDRequestMessage">
+    <part name="parameters" element="tns:NearestNumberBezOFD"/>
+  </message>
+  <message name="NearestNumberBezOFDResponseMessage">
+    <part name="parameters" element="tns:NearestNumberBezOFDResponse"/>
+  </message>
+  <portType name="NewServicePortType">
+    <operation name="BaseService">
+      <input message="tns:BaseServiceRequestMessage"/>
+      <output message="tns:BaseServiceResponseMessage"/>
+    </operation>
+    <operation name="SecondBaseService">
+      <input message="tns:SecondBaseServiceRequestMessage"/>
+      <output message="tns:SecondBaseServiceResponseMessage"/>
+    </operation>
+    <operation name="NearestNumberBezOFD">
+      <input message="tns:NearestNumberBezOFDRequestMessage"/>
+      <output message="tns:NearestNumberBezOFDResponseMessage"/>
+    </operation>
+  </portType>
+  <binding name="NewServiceSoapBinding" type="tns:NewServicePortType">
+    <soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="BaseService">
+      <soapbind:operation style="document" soapAction="http://127.0.0.1#NewService:BaseService"/>
+      <input>
+        <soapbind:body use="literal"/>
+      </input>
+      <output>
+        <soapbind:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="SecondBaseService">
+      <soapbind:operation style="document" soapAction="http://127.0.0.1#NewService:SecondBaseService"/>
+      <input>
+        <soapbind:body use="literal"/>
+      </input>
+      <output>
+        <soapbind:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="NearestNumberBezOFD">
+      <soapbind:operation style="document" soapAction="http://127.0.0.1#NewService:NearestNumberBezOFD"/>
+      <input>
+        <soapbind:body use="literal"/>
+      </input>
+      <output>
+        <soapbind:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="NewServiceSoap12Binding" type="tns:NewServicePortType">
+    <soap12bind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="BaseService">
+      <soap12bind:operation style="document" soapAction="http://127.0.0.1#NewService:BaseService"/>
+      <input>
+        <soap12bind:body use="literal"/>
+      </input>
+      <output>
+        <soap12bind:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="SecondBaseService">
+      <soap12bind:operation style="document" soapAction="http://127.0.0.1#NewService:SecondBaseService"/>
+      <input>
+        <soap12bind:body use="literal"/>
+      </input>
+      <output>
+        <soap12bind:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="NearestNumberBezOFD">
+      <soap12bind:operation style="document" soapAction="http://127.0.0.1#NewService:NearestNumberBezOFD"/>
+      <input>
+        <soap12bind:body use="literal"/>
+      </input>
+      <output>
+        <soap12bind:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="NewService">
+    <port name="NewServiceSoap" binding="tns:NewServiceSoapBinding">
+      <documentation>
+        <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"/>
+      </documentation>
+      <soapbind:address location="http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService"/>
+    </port>
+    <port name="NewServiceSoap12" binding="tns:NewServiceSoap12Binding">
+      <soap12bind:address location="http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint></con:endpoints><con:operation id="c628646b-96fb-4de8-8f7c-74ac5030a262" isOneWay="false" action="http://127.0.0.1#NewService:BaseService" name="BaseService" bindingOperationName="BaseService" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0886a88c-7490-4bca-a8eb-4161a3f25142" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://127.0.0.1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:BaseService>\r
+         <ns:Division>?</ns:Division>\r
+      </ns:BaseService>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://127.0.0.1#NewService:BaseService"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ec5e3f4e-15e9-4889-97fc-325ea2a228ef" isOneWay="false" action="http://127.0.0.1#NewService:SecondBaseService" name="SecondBaseService" bindingOperationName="SecondBaseService" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e8297d7e-d09a-4bfb-aa51-b1d837923177" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://127.0.0.1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:SecondBaseService/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://127.0.0.1#NewService:SecondBaseService"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b1391327-c993-4265-93d0-95223cd81509" isOneWay="false" action="http://127.0.0.1#NewService:NearestNumberBezOFD" name="NearestNumberBezOFD" bindingOperationName="NearestNumberBezOFD" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="347ef3f0-a179-4131-86bc-da9fb4715368" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://127.0.0.1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:NearestNumberBezOFD>\r
+         <ns:чСлучайное>?</ns:чСлучайное>\r
+         <ns:Ответ>?</ns:Ответ>\r
+      </ns:NearestNumberBezOFD>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://127.0.0.1#NewService:NearestNumberBezOFD"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="d46e675a-8dda-4424-9840-bd73168646b6" name="FirstSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7bfe6927-6c93-4529-9d43-5e620b686660" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="NearestNumberBezOFD" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" name="GN" id="c2f4c7a4-b2a5-427b-84ed-7d59c1fe4fc0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NewServiceSoapBinding</con:interface><con:operation>SecondBaseService</con:operation><con:request name="GN" id="cc68ef9e-6db5-48fd-b6e5-454c844dbc05"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://127.0.0.1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:SecondBaseService/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="421179b7-559a-4362-bab8-a8e083b80d02"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="TransferToResult" id="64bc95ac-4774-45ce-8202-f44a4c163536"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="true" transferChildNodes="false"><con:name>GNtoOFD</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GN</con:sourceStep><con:sourcePath>declare namespace ns1='http://127.0.0.1';
+//ns1:SecondBaseServiceResponse/ns1:return/text()</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>OFD</con:targetStep><con:targetPath>declare namespace ns1='http://127.0.0.1';
+//ns1:BaseService/ns1:Division/text()</con:targetPath><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="true" entitize="true" transferChildNodes="false"><con:name>GNtoResult</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>OFD</con:sourceStep><con:sourcePath>declare namespace ns1='http://127.0.0.1';
+//ns1:BaseService/ns1:Division/text()</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Result</con:targetStep><con:targetPath>declare namespace ns1='http://127.0.0.1';
+//ns1:NearestNumberBezOFD/ns1:чСлучайное/text()</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="OFD" id="5eadd547-8400-4e18-b29f-cdf37797ed24"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NewServiceSoapBinding</con:interface><con:operation>BaseService</con:operation><con:request name="OFD" id="1e07be05-2c80-4e1e-a7a8-7b7b62044f71"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://127.0.0.1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:BaseService>
+         <ns:Division>99</ns:Division>
+      </ns:BaseService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e1d34881-ff83-4479-88af-c8b96edd3fe5"/><con:assertion type="GroovyScriptAssertion" id="002ade19-9aec-44c8-acd3-37d58403aa8f" name="Script Assertion"><con:configuration><scriptText>import com.eviware.soapui.support.GroovyUtils 
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+def holder = groovyUtils.getXmlHolder ("OFD#Response")
+holder.declareNamespace( 'ns1', 'http://127.0.0.1')
+def a =  holder.getNodeValue ("//ns1:BaseServiceResponse[1]/ ns1:return[1]/text()")
+if   (a > -1 || a &lt; 3)
+{
+	log.info a
+}
+else {
+	throw new Error ("Остаток от деления вышел за диапозон")
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="TransferToResult2" id="3bb7ff20-3377-4eb2-b3b0-852a00915d9f"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>OFDtoRESULT</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>OFD</con:sourceStep><con:sourcePath>declare namespace ns1='http://127.0.0.1';
+//ns1:BaseServiceResponse/ns1:return/text()</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>Result</con:targetStep><con:targetPath>declare namespace ns1='http://127.0.0.1';
+//ns1:NearestNumberBezOFD/ns1:Ответ/text()</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" name="Result" id="a249a602-b9a0-44f1-b9c8-c92c1b7e2c37"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NewServiceSoapBinding</con:interface><con:operation>NearestNumberBezOFD</con:operation><con:request name="Result" id="99ce2db2-6e1b-4591-a3f2-0a1815636ae9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vdi-14/ESB_DEV_VINNICHENKO00/ws/NewService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://127.0.0.1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:NearestNumberBezOFD>
+         <ns:чСлучайное>99</ns:чСлучайное>
+         <ns:Ответ>4</ns:Ответ>
+      </ns:NearestNumberBezOFD>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4ac98a09-5d49-4495-b8ae-5c1e78a78569"/><con:assertion type="GroovyScriptAssertion" id="b3a8ae83-5e19-438f-bc2d-df46e24df75d" name="Script Assertion"><con:configuration><scriptText>import com.eviware.soapui.support.GroovyUtils 
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+def holder1 = groovyUtils.getXmlHolder ("Result#Response")
+def holder2 = groovyUtils.getXmlHolder ("Result#Request")
+holder1.declareNamespace( 'ns1', 'http://127.0.0.1')
+holder2.declareNamespace( 'ns1', 'http://127.0.0.1')
+int res =  Integer.parseInt(holder1.getNodeValue("//ns1:NearestNumberBezOFDResponse[1]/ns1:return[1]/text()"))
+int Ch =  Integer.parseInt(holder2.getNodeValue("//ns1:NearestNumberBezOFD/ns1:чСлучайное/text()"))
+int otv = Integer.parseInt(holder2.getNodeValue("//ns1:NearestNumberBezOFD/ns1:Ответ/text()"))
+if   (res ==  Ch - otv)
+{
+	log.info res
+}
+else {
+	throw new Error ("Данный ответ не сходится с правильным")
+}</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="WriteResultToFile" id="d8e9071f-50d9-4221-b100-78b7d02cf1e7"><con:settings/><con:config><script>import com.eviware.soapui.support.GroovyUtils 
+import com.eviware.soapui.settings.WsdlSettings
+import com.eviware.soapui.SoapUI 
+import com.eviware.soapui.support.XmlHolder
+import com.eviware.soapui.impl.wsdl.teststeps.WsdlTestRequestStep.*
+import com.eviware.soapui.support.XmlHolder
+																					// Объявление класса groovyUtils   
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+																					// Объявление подкласса responseHolder
+def responseHolder = groovyUtils.getXmlHolder("Result#Response")
+																					// Объявление пространства имен
+responseHolder.declareNamespace( 'ns1', 'http://127.0.0.1')
+																					// Получение ответа
+def GetResponse =  responseHolder.getNodeValue("//ns1:NearestNumberBezOFDResponse[1]/ns1:return[1]/text()")
+																					// Возврат результата
+return GetResponse</script></con:config></con:testStep><con:testStep type="groovy" name="GetConnection" id="010bd245-0908-4abe-8b09-a4f2dcfb0597"><con:settings/><con:config><script>								 						 // Создание подключения к файлку Connection.xml
+  FileInputStream fstream = new FileInputStream('//10.10.100.81/crm/Кошулько А.А/Connection.xml');
+  														// Чтение данных из файла Connection.xml
+  DataInputStream read = new DataInputStream(fstream);
+  														// Перемещение данных в буфер обмена
+  BufferedReader br = new BufferedReader(new InputStreamReader(read));
+  def strLine;
+  														// Цикл передачи данных в переменну strLine из буфера обмена
+  while ((strLine = br.readLine()) != null)   
+  {
+   log.info "$strLine";								
+   														// Возврат значения переменной strLine с содержимым файла
+   														// Connection.xml
+   return strLine
+  }
+  read.close();</script></con:config></con:testStep><con:testStep type="jdbc" name="JDBC_Request" id="883f237c-e257-4d42-a485-f304c46b29dd"><con:settings><con:setting id="discardResponse">false</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>${GetConnection#result}</con:connectionString><con:query>INSERT INTO results (result)
+VALUES ("${WriteResultToFile#result}") 
+ON DUPLICATE KEY UPDATE result = "${WriteResultToFile#result}"
+
+</con:query><con:assertion type="GroovyScriptAssertion" id="6476e609-0e5a-458a-83bb-b69e536a8355" name="Script Assertion"><con:configuration><scriptText/></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:setupScript/><con:tearDownScript>import groovy.sql.Sql
+																// Строка и драйвер подключения к базе данных
+def sql = Sql.newInstance('jdbc:mysql://10.10.200.67:3306/ResultAutoTestSoapUI', 'resultuser', 'B5mxFwZvCV', 'com.mysql.jdbc.Driver') 
+															     // Получение времени выполнения теста и его конечного статуса
+def a = testRunner.timeTaken
+def s = testRunner.status
+  def file = new File('//10.10.100.81/crm/Кошулько А.А/Example1.txt')
+  																// Передача ответа в котором содержится конечный статус
+  file &lt;&lt; s
+  																// Передача времени выполнения в последнюю запись базы данных
+  sql.execute("UPDATE results  SET  run_time  =  ${a}   ORDER BY id DESC LIMIT 1") 
+  FileInputStream fstream = new FileInputStream('//10.10.100.81/crm/Кошулько А.А/Example1.txt');
+  DataInputStream read = new DataInputStream(fstream);
+  BufferedReader br = new BufferedReader(new InputStreamReader(read));
+  def stat;
+  while ((stat = br.readLine()) != null)   
+  {
+  																// Передача конечного статуса теста в последнюю запись базы данных
+   sql.execute("UPDATE results  SET status  =  ${stat}  ORDER BY id DESC LIMIT 1")
+  }
+  file.write("")
+  read.close()</con:tearDownScript><con:properties><con:property><con:name>RT</con:name><con:value>${TearDown#Result}</con:value></con:property></con:properties></con:testCase><con:properties/><con:setupScript/><con:tearDownScript/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
